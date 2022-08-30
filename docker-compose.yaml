@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  react:
+    build: .
+    container_name: admin-videos-react
+    # command: .docker/start.sh
+    volumes:
+      - .:/home/node/react
+    ports:
+      - 3001:3000
