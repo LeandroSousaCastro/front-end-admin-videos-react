@@ -23,7 +23,12 @@ export const ListCategory = () => {
   }));
 
   const columns: GridColDef[] = [
-    { field: "name", headerName: "Name", flex: 1 },
+    {
+      field: "name",
+      headerName: "Name",
+      flex: 1,
+      renderCell: renderNameCell,
+    },
     { field: "description", headerName: "Description", flex: 1 },
     {
       field: "is_active",
@@ -49,7 +54,7 @@ export const ListCategory = () => {
     );
   }
 
-  function renderActionsCell(params: GridRenderCellParams) {
+  function renderActionsCell(rowData: GridRenderCellParams) {
     return (
       <IconButton
         color="secondary"
@@ -61,6 +66,24 @@ export const ListCategory = () => {
     );
   }
 
+  function renderNameCell(rowData: GridRenderCellParams) {
+    return (
+      <Link
+        style={{ textDecoration: "none" }}
+        to={`/categories/edit/${rowData.id}`}
+      >
+        <Typography color="primary">{rowData.value}</Typography>
+      </Link>
+    );
+  }
+
+  const componentsProps = {
+    toolbar: {
+      showQuickFilter: true,
+      quickFilterProps: { debounceMs: 500 },
+    },
+  };
+
   return (
     <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box display="flex" justifyContent="flex-end">
@@ -68,22 +91,17 @@ export const ListCategory = () => {
           variant="contained"
           color="secondary"
           component={Link}
-          to="/categories/new"
+          to="/categories/create"
           style={{ marginBottom: "1rem" }}
         >
           New Category
         </Button>
       </Box>
       <Typography variant="h3" component="h1">
-        <Box style={{ height: 300, width: "100%" }}>
+        <Box style={{ display: "flex", height: 600 }}>
           <DataGrid
             components={{ Toolbar: GridToolbar }}
-            componentsProps={{
-              toolbar: {
-                showQuickFilter: true,
-                quickFilterProps: { debounceMs: 500 },
-              },
-            }}
+            componentsProps={componentsProps}
             disableColumnSelector={true}
             disableColumnFilter={true}
             disableDensitySelector={true}
