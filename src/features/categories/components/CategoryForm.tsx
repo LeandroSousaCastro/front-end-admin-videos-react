@@ -15,22 +15,22 @@ type Props = {
   category: Category;
   isDisabled?: boolean;
   isLoading?: boolean;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export function CategoryForm({
   category,
-  isDisabled = false,
+  isDisabled = true,
   isLoading = false,
-  onSubmit,
+  handleSubmit,
   handleChange,
   handleToggle,
 }: Props) {
   return (
     <Box p={2}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <FormControl fullWidth>

@@ -1,8 +1,8 @@
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import { selectCategories } from "./categorySlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { deleteCategory, selectCategories } from "./categorySlice";
 import {
   DataGrid,
   GridRowsProp,
@@ -10,9 +10,12 @@ import {
   GridRenderCellParams,
   GridToolbar,
 } from "@mui/x-data-grid";
+import { useSnackbar } from "notistack";
 
 export const ListCategory = () => {
   const categories = useAppSelector(selectCategories);
+  const dispatch = useAppDispatch();
+  const { enqueueSnackbar } = useSnackbar();
 
   const rows: GridRowsProp = categories.map((category) => ({
     id: category.id,
@@ -42,6 +45,7 @@ export const ListCategory = () => {
       field: "id",
       headerName: "Actions",
       flex: 1,
+      type: "string",
       renderCell: renderActionsCell,
     },
   ];
@@ -58,7 +62,7 @@ export const ListCategory = () => {
     return (
       <IconButton
         color="secondary"
-        onClick={() => console.log("clicked")}
+        onClick={() => handleDeleteCategory(rowData.value)}
         aria-label="delete"
       >
         <DeleteIcon />
@@ -83,6 +87,11 @@ export const ListCategory = () => {
       quickFilterProps: { debounceMs: 500 },
     },
   };
+
+  function handleDeleteCategory(id: string) {
+    dispatch(deleteCategory(id));
+    enqueueSnackbar("Success delete category", { variant: "success" });
+  }
 
   return (
     <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
