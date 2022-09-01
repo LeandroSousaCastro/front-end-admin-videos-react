@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "features",
         "components",
-        "api slice"
+        "api slice",
+        "data grid"
     ]
 }
