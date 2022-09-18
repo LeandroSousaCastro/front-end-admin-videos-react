@@ -1,23 +1,32 @@
 import { Box, Paper, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { Category, selectCategoryById, updateCategory } from "./categorySlice";
+import {
+  Category,
+  useGetCategoryQuery,
+  useUpdateCategoryMutation,
+} from "./categorySlice";
 import { CategoryForm } from "./components/CategoryForm";
 import { useSnackbar } from "notistack";
 
 export const EditCategory = () => {
-  const id = useParams().id || "";
-  const category = useAppSelector((state) => selectCategoryById(state, id));
-  const [categoryState, setCategoryState] = useState<Category>(category);
-  const [isDisabled, setIsDisabled] = useState(false);
-  const dispatch = useAppDispatch();
   const { enqueueSnackbar } = useSnackbar();
+  const id = useParams().id || "";
+  const { data: category, isFetching } = useGetCategoryQuery({ id });
+  const [updateCategory, status] = useUpdateCategoryMutation();
+  const [categoryState, setCategoryState] = useState<Category>({
+    id: "",
+    name: "",
+    description: "",
+    is_active: false,
+    deleted_at: "",
+    created_at: "",
+    updated_at: "",
+  });
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    dispatch(updateCategory(categoryState));
-    enqueueSnackbar("Success updating category", { variant: "success" });
+    await updateCategory(categoryState);
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +38,21 @@ export const EditCategory = () => {
     const { name, checked } = e.target;
     setCategoryState({ ...categoryState, [name]: checked });
   };
+
+  useEffect(() => {
+    if (category) {
+      setCategoryState(category.data);
+    }
+  }, [category]);
+
+  useEffect(() => {
+    if (status.isSuccess) {
+      enqueueSnackbar("Success update category", { variant: "success" });
+    }
+    if (status.error) {
+      enqueueSnackbar("Category not updated", { variant: "error" });
+    }
+  }, [enqueueSnackbar, status.isSuccess, status.error]);
 
   return (
     <Box>
@@ -42,7 +66,7 @@ export const EditCategory = () => {
         </Box>
         <CategoryForm
           category={categoryState}
-          isDisabled={isDisabled}
+          isDisabled={status.isLoading}
           isLoading={false}
           handleSubmit={handleSubmit}
           handleChange={handleChange}

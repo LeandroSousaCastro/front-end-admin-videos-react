@@ -44,10 +44,32 @@ function getCategories({ page = 1, perPage = 10, search = "" }) {
   return `${endpointUrl}?${parseQueryParams(params)})}`;
 }
 
+function createCategoryMutation(category: Category) {
+  return {
+    url: endpointUrl,
+    method: "POST",
+    body: category,
+  };
+}
+
+function updateCategoryMutation(category: Category) {
+  return {
+    url: `${endpointUrl}/${category.id}`,
+    method: "PUT",
+    body: category,
+  };
+}
+
 function deleteCategoryMutation(category: Category) {
   return {
     url: `${endpointUrl}/${category.id}`,
     method: "DELETE",
+  };
+}
+
+function getCategoryQuery({ id }: { id: string }) {
+  return {
+    url: `${endpointUrl}/${id}`,
   };
 }
 
@@ -56,6 +78,18 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
     getCategories: query<Results, CategoryParams>({
       query: getCategories,
       providesTags: ["Categories"],
+    }),
+    getCategory: query<Results, { id: string }>({
+      query: getCategoryQuery,
+      providesTags: ["Categories"],
+    }),
+    createCategory: mutation<Result, Category>({
+      query: createCategoryMutation,
+      invalidatesTags: ["Categories"],
+    }),
+    updateCategory: mutation<Result, Category>({
+      query: updateCategoryMutation,
+      invalidatesTags: ["Categories"],
     }),
     deleteCategories: mutation<Result, { id: string }>({
       query: deleteCategoryMutation,
@@ -135,5 +169,10 @@ export const selectCategoryById = (state: RootState, id: string) => {
 export default categoriesSlice.reducer;
 export const { createCategory, updateCategory, deleteCategory } =
   categoriesSlice.actions;
-export const { useGetCategoriesQuery, useDeleteCategoriesMutation } =
-  categoriesApiSlice;
+export const {
+  useGetCategoriesQuery,
+  useGetCategoryQuery,
+  useCreateCategoryMutation,
+  useUpdateCategoryMutation,
+  useDeleteCategoriesMutation,
+} = categoriesApiSlice;
