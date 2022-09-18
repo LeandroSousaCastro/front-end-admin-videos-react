@@ -27,7 +27,7 @@ function parseQueryParams(params: CategoryParams) {
   }
 
   if (params.search) {
-    // Api foi construída passando o paramentro filter e não search
+    // Api foi construída passando o parâmetro filter e não search
     // Se mudar precisa alterar aqui
     query.append("filter", params.search.toString());
   }
