@@ -41,6 +41,7 @@ export const EditCategory = () => {
 
   useEffect(() => {
     if (category) {
+      // @ts-ignore
       setCategoryState(category.data);
     }
   }, [category]);

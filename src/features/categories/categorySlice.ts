@@ -79,7 +79,7 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
       query: getCategories,
       providesTags: ["Categories"],
     }),
-    getCategory: query<Results, { id: string }>({
+    getCategory: query<Result, { id: string }>({
       query: getCategoryQuery,
       providesTags: ["Categories"],
     }),
