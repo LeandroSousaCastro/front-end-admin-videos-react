@@ -7,7 +7,6 @@ import { useSnackbar } from "notistack";
 export const CreateCategory = () => {
   const { enqueueSnackbar } = useSnackbar();
   const [createCategory, status] = useCreateCategoryMutation();
-  const [isDisabled, setIsDisabled] = useState(false);
   const [categoryState, setCategoryState] = useState<Category>({
     id: "",
     name: "",
@@ -36,12 +35,11 @@ export const CreateCategory = () => {
   useEffect(() => {
     if (status.isSuccess) {
       enqueueSnackbar("Success create category", { variant: "success" });
-      setIsDisabled(true);
     }
     if (status.error) {
       enqueueSnackbar("Category not created", { variant: "error" });
     }
-  }, [enqueueSnackbar, status.isSuccess, status.error]);
+  }, [status, enqueueSnackbar]);
 
   return (
     <Box>
@@ -54,8 +52,8 @@ export const CreateCategory = () => {
           </Box>
           <CategoryForm
             category={categoryState}
-            isDisabled={isDisabled}
-            isLoading={false}
+            isDisabled={status.isLoading}
+            isLoading={status.isLoading}
             handleSubmit={handleSubmit}
             handleChange={handleChange}
             handleToggle={handleToggle}

@@ -21,9 +21,9 @@ export interface CastMember {
   id: string;
   name: string;
   type: number;
-  deletedAt: null | string;
-  createdAt: string;
-  updatedAt: string;
+  deleted_at: null | string;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface Meta {
@@ -40,6 +40,5 @@ export interface CastMemberParams {
   page?: number;
   perPage?: number;
   search?: string;
-  isActive?: boolean;
-  type: number;
+  type?: number;
 }
