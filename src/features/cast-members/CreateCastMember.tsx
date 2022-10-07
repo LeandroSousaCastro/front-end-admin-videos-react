@@ -23,7 +23,7 @@ export const CreateCastMember = () => {
 
   useEffect(() => {
     if (status.isSuccess) {
-      enqueueSnackbar("Success create castMember", { variant: "success" });
+      enqueueSnackbar("Success created castMember", { variant: "success" });
     }
     if (status.error) {
       console.log(status);
