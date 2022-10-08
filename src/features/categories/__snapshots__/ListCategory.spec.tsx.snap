@@ -24,7 +24,7 @@ exports[`ListCategory test should render correctly 1`] = `
       class="MuiBox-root css-99txy8"
     >
       <div
-        aria-colcount="5"
+        aria-colcount="4"
         aria-multiselectable="false"
         aria-rowcount="1"
         class="MuiDataGrid-root MuiDataGrid-root--densityStandard css-1e2bxag-MuiDataGrid-root"

@@ -41,7 +41,7 @@ function parseQueryParams(params: CategoryParams) {
 
 function getCategories({ page = 1, perPage = 10, search = "" }) {
   const params = { page, perPage, search, isActive: true };
-  return `${endpointUrl}?${parseQueryParams(params)})}`;
+  return `${endpointUrl}?${parseQueryParams(params)}`;
 }
 
 function createCategoryMutation(category: Category) {

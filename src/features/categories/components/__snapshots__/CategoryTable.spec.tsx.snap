@@ -6,7 +6,7 @@ exports[`CategoriesTable test should render castMember table correctly 1`] = `
     class="MuiBox-root css-99txy8"
   >
     <div
-      aria-colcount="5"
+      aria-colcount="4"
       aria-multiselectable="false"
       aria-rowcount="5"
       class="MuiDataGrid-root MuiDataGrid-root--densityStandard css-1e2bxag-MuiDataGrid-root"
@@ -640,7 +640,7 @@ exports[`CategoriesTable test should render castMember table with correct is act
     class="MuiBox-root css-99txy8"
   >
     <div
-      aria-colcount="5"
+      aria-colcount="4"
       aria-multiselectable="false"
       aria-rowcount="5"
       class="MuiDataGrid-root MuiDataGrid-root--densityStandard css-1e2bxag-MuiDataGrid-root"
@@ -1274,7 +1274,7 @@ exports[`CategoriesTable test should render castMember table with empty data 1`]
     class="MuiBox-root css-99txy8"
   >
     <div
-      aria-colcount="5"
+      aria-colcount="4"
       aria-multiselectable="false"
       aria-rowcount="1"
       class="MuiDataGrid-root MuiDataGrid-root--densityStandard css-1e2bxag-MuiDataGrid-root"
@@ -1853,7 +1853,7 @@ exports[`CategoriesTable test should render castMember table with loading 1`] = 
     class="MuiBox-root css-99txy8"
   >
     <div
-      aria-colcount="5"
+      aria-colcount="4"
       aria-multiselectable="false"
       aria-rowcount="5"
       class="MuiDataGrid-root MuiDataGrid-root--densityStandard css-1e2bxag-MuiDataGrid-root"

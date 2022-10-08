@@ -7,6 +7,13 @@ export const categoryResponse = {
       is_active: true,
       created_at: "2022-09-24 16:44:47",
     },
+    {
+      id: "c9f51d7e-8d84-404d-b64c-aaabf224b916",
+      name: "Filtered",
+      description: "Some description",
+      is_active: true,
+      created_at: "2022-09-24 16:44:47",
+    },
   ],
   meta: {
     total: 1,

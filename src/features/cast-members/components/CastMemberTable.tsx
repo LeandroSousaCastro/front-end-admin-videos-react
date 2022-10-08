@@ -85,6 +85,7 @@ export function CastMemberTable({
         color="secondary"
         onClick={() => handleDelete(rowData.value)}
         aria-label="delete"
+        data-testid="delete-button"
       >
         <DeleteIcon />
       </IconButton>
@@ -104,7 +105,7 @@ export function CastMemberTable({
 
   const rows = data ? mapDataToGridRows(data) : [];
   const rowCount = data?.meta.total || 0;
-  
+
   return (
     <Box sx={{ display: "flex", height: 680 }}>
       <DataGrid

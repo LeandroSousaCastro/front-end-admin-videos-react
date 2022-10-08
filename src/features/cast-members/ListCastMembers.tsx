@@ -35,12 +35,12 @@ export const ListCastMembers = () => {
   }
 
   function handleFilterChange(filterModel: GridFilterModel) {
-    if (filterModel.quickFilterValues?.length) {
-      const search = filterModel.quickFilterValues.join("");
-      return setOptions({ ...options, search });
+    if (!filterModel.quickFilterValues?.length) {
+      return setOptions({ ...options, search: "" });
     }
 
-    return setOptions({ ...options, search: "" });
+    const search = filterModel.quickFilterValues.join("");
+    return setOptions({ ...options, search });
   }
 
   useEffect(() => {

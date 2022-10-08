@@ -12,7 +12,7 @@ export const initialState: CastMember = {
   id: "",
   name: "",
   type: 1,
-  created_at: ""
+  created_at: "",
 };
 
 function parseQueryParams(params: CastMemberParams) {
@@ -53,7 +53,7 @@ function getCastMembers(params: CastMemberParams) {
     perPage,
     search,
     type,
-  })})}`;
+  })}`;
 }
 
 function createCastMember(castMember: CastMember) {
