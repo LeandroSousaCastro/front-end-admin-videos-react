@@ -38,6 +38,7 @@ exports[`CategoryForm test should render category form correctly 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="name"
                   disabled=""
                   id=":r0:"
                   name="name"
@@ -90,6 +91,7 @@ exports[`CategoryForm test should render category form correctly 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="description"
                   disabled=""
                   id=":r1:"
                   name="description"
@@ -120,26 +122,27 @@ exports[`CategoryForm test should render category form correctly 1`] = `
             class="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <label
-              class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+              class="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
             >
               <span
                 class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
               >
                 <span
-                  class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-checked css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  aria-disabled="true"
+                  class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-checked Mui-disabled css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  data-testid="is_active"
+                  tabindex="-1"
                 >
                   <input
                     aria-label="controlled"
                     checked=""
                     class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+                    disabled=""
                     name="is_active"
                     type="checkbox"
                   />
                   <span
                     class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
-                  />
-                  <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                   />
                 </span>
                 <span
@@ -147,7 +150,7 @@ exports[`CategoryForm test should render category form correctly 1`] = `
                 />
               </span>
               <span
-                class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label Mui-disabled css-ahj2mt-MuiTypography-root"
               >
                 Active
               </span>
@@ -224,6 +227,7 @@ exports[`CategoryForm test should render category form from with disable state 1
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="name"
                   disabled=""
                   id=":r4:"
                   name="name"
@@ -276,6 +280,7 @@ exports[`CategoryForm test should render category form from with disable state 1
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="description"
                   disabled=""
                   id=":r5:"
                   name="description"
@@ -306,26 +311,27 @@ exports[`CategoryForm test should render category form from with disable state 1
             class="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <label
-              class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+              class="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
             >
               <span
                 class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
               >
                 <span
-                  class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-checked css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  aria-disabled="true"
+                  class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-checked Mui-disabled css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  data-testid="is_active"
+                  tabindex="-1"
                 >
                   <input
                     aria-label="controlled"
                     checked=""
                     class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+                    disabled=""
                     name="is_active"
                     type="checkbox"
                   />
                   <span
                     class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
-                  />
-                  <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                   />
                 </span>
                 <span
@@ -333,7 +339,7 @@ exports[`CategoryForm test should render category form from with disable state 1
                 />
               </span>
               <span
-                class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label Mui-disabled css-ahj2mt-MuiTypography-root"
               >
                 Active
               </span>
@@ -410,6 +416,7 @@ exports[`CategoryForm test should render category form from with loading state 1
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="name"
                   disabled=""
                   id=":r2:"
                   name="name"
@@ -462,6 +469,7 @@ exports[`CategoryForm test should render category form from with loading state 1
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  data-testid="description"
                   disabled=""
                   id=":r3:"
                   name="description"
@@ -492,26 +500,27 @@ exports[`CategoryForm test should render category form from with loading state 1
             class="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <label
-              class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+              class="MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
             >
               <span
                 class="MuiSwitch-root MuiSwitch-sizeMedium css-julti5-MuiSwitch-root"
               >
                 <span
-                  class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-checked css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  aria-disabled="true"
+                  class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-disabled PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorSecondary Mui-checked Mui-disabled Mui-checked Mui-disabled css-priqlz-MuiButtonBase-root-MuiSwitch-switchBase"
+                  data-testid="is_active"
+                  tabindex="-1"
                 >
                   <input
                     aria-label="controlled"
                     checked=""
                     class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+                    disabled=""
                     name="is_active"
                     type="checkbox"
                   />
                   <span
                     class="MuiSwitch-thumb css-jsexje-MuiSwitch-thumb"
-                  />
-                  <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                   />
                 </span>
                 <span
@@ -519,7 +528,7 @@ exports[`CategoryForm test should render category form from with loading state 1
                 />
               </span>
               <span
-                class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label Mui-disabled css-ahj2mt-MuiTypography-root"
               >
                 Active
               </span>

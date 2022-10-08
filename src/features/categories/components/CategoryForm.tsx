@@ -41,6 +41,9 @@ export function CategoryForm({
                 value={category.name}
                 disabled={isDisabled}
                 onChange={handleChange}
+                inputProps={{
+                  "data-testid": "name",
+                }}
               />
             </FormControl>
           </Grid>
@@ -53,6 +56,9 @@ export function CategoryForm({
                 value={category.description}
                 disabled={isDisabled}
                 onChange={handleChange}
+                inputProps={{
+                  "data-testid": "description",
+                }}
               />
             </FormControl>
           </Grid>
@@ -68,6 +74,8 @@ export function CategoryForm({
                     inputProps={{
                       "aria-label": "controlled",
                     }}
+                    data-testid="is_active"
+                    disabled={isDisabled}
                   />
                 }
                 label="Active"
