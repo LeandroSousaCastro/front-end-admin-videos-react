@@ -38,8 +38,6 @@ export function CastMemberTable({
     },
   };
 
-  const rows = data ? mapDataToGridRows(data) : [];
-
   function mapDataToGridRows(data: Results) {
     const { data: cast_members } = data;
     return cast_members.map((cast_member) => ({
@@ -104,7 +102,9 @@ export function CastMemberTable({
     );
   }
 
-  const rowCount = data?.meta.total ?? 0;
+  const rows = data ? mapDataToGridRows(data) : [];
+  const rowCount = data?.meta.total || 0;
+  
   return (
     <Box sx={{ display: "flex", height: 680 }}>
       <DataGrid

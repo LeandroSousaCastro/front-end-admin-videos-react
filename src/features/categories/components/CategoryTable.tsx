@@ -38,8 +38,6 @@ export function CategoriesTable({
     },
   };
 
-  const rows = data ? mapDataToGridRows(data) : [];
-
   function mapDataToGridRows(data: Results) {
     const { data: categories } = data;
     return categories.map((category) => ({
@@ -107,7 +105,9 @@ export function CategoriesTable({
     );
   }
 
-  const rowCount = data?.meta.total ?? 0;
+  const rows = data ? mapDataToGridRows(data) : [];
+  const rowCount = data?.meta.total || 0;
+
   return (
     <Box sx={{ display: "flex", height: 680 }}>
       <DataGrid

@@ -12,9 +12,9 @@ export const CreateCategory = () => {
     name: "",
     description: "",
     is_active: false,
-    deleted_at: null,
     created_at: "",
-    updated_at: "",
+    // updated_at: "",
+    // deleted_at: null,
   });
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -1,13 +1,13 @@
 export interface Results {
-  meta: Meta;
-  links: Links;
   data: Category[];
+  meta: Meta;
+  // links: Links;
 }
 
 export interface Result {
   data: Category;
   meta: Meta;
-  links: Links;
+  // links: Links;
 }
 
 export interface Category {
@@ -15,22 +15,22 @@ export interface Category {
   name: string;
   description: null | string;
   is_active: boolean;
-  deleted_at: null | string;
   created_at: string;
-  updated_at: string;
+  // updated_at: string;
+  // deleted_at: null | string;
 }
 
-export interface Links {
-  prev: null;
-  last: string;
-  next: string;
-  first: string;
-}
+// export interface Links {
+//   prev: null;
+//   last: string;
+//   next: string;
+//   first: string;
+// }
 
 export interface Meta {
   to: number;
   from: number;
-  path: string;
+  // path: string;
   total: number;
   per_page: number;
   last_page: number;

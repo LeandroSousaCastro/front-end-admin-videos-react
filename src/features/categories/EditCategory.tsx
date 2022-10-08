@@ -19,9 +19,9 @@ export const EditCategory = () => {
     name: "",
     description: "",
     is_active: false,
-    deleted_at: "",
     created_at: "",
-    updated_at: "",
+    // updated_at: "",
+    // deleted_at: "",
   });
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
