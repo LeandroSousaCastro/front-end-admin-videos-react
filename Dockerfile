@@ -1,4 +1,4 @@
-FROM node:16.17.0-slim
+FROM node:16.17.0-slim as front-videos-react-img
 
 RUN mkdir -p /usr/share/man/man1 && \
     echo 'deb http://ftp.debian.org/debian stretch-backports main' | tee /etc/apt/sources.list.d/stretch-backports.list && \
